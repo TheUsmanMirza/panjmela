@@ -60,7 +60,7 @@ class VideoDetailView(generics.GenericAPIView):
     def post(self, request, *args, **kwargs):
 
         page_number = int(request.data['page'])
-        page_size = 5
+        page_size = 100
         offset = (page_number - 1) * page_size
         try:
             video = VideoDetail.objects.all()[offset: page_size + offset]
